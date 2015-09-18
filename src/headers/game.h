@@ -9,12 +9,14 @@
 // TYPES
 typedef struct  s_game
 {
-    char        *name;
-    void        (*start)();
+  char          *name;
+  void          (*quit)();
+  void          (*start)();
 }               t_game;
 
 // PROTOTYPES
 t_game *game_init();
+void   game_quit();
 void   game_start();
 
 #endif

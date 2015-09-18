@@ -3,12 +3,13 @@
 
 int main()
 {
-    t_game *game;
+  t_game *game;
 
-    game = game_init();
-    if (game != NULL)
-    {
-      game->start();
-    }
-    return 0;
+  game = game_init();
+  if (game != NULL)
+  {
+    game->start();
+    game->quit();
+  }
+  return 0;
 }
