@@ -8,28 +8,28 @@ t_map *map_init()
   map = malloc(sizeof(t_map));
   if (map == NULL)
   {
-    return NULL;
+    return (NULL);
   }
   map->height = 0;
   map->width = 0;
   map->getHeight = &map_get_height;
   map->getWidth = &map_get_width;
   map->setSize = &map_set_size;
-  return map;
+  return (map);
 }
 int map_get_height()
 {
   t_game *game;
 
   game = game_get_data();
-  return game->map->height;
+  return (game->map->height);
 }
 int map_get_width()
 {
   t_game *game;
 
   game = game_get_data();
-  return game->map->width;
+  return (game->map->width);
 }
 void map_destroy()
 {
