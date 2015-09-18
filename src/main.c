@@ -25,5 +25,5 @@ int main()
     printf("p2 addr = %p\n", p2);
     game->quit();
   }
-  return (0);
+  return (EXIT_SUCCESS);
 }
