@@ -19,39 +19,31 @@ t_map *map_init()
 }
 int map_get_height()
 {
-  t_game  *game;
-  t_map   *map;
+  t_game *game;
 
   game = game_get_data();
-  map = game->map;
-  return map->height;
+  return game->map->height;
 }
 int map_get_width()
 {
-  t_game  *game;
-  t_map   *map;
+  t_game *game;
 
   game = game_get_data();
-  map = game->map;
-  return map->width;
+  return game->map->width;
 }
 void map_destroy()
 {
-  t_game  *game;
-  t_map   *map;
+  t_game *game;
 
   game = game_get_data();
-  map = game->map;
+  free(game->map);
   printf("map destroyed\n");
-  free(map);
 }
 void map_set_size(int height, int width)
 {
-  t_game  *game;
-  t_map   *map;
+  t_game *game;
 
   game = game_get_data();
-  map = game->map;
-  map->height = height;
-  map->width = width;
+  game->map->height = height;
+  game->map->width = width;
 }
