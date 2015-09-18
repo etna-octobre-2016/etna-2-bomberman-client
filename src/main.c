@@ -1,7 +1,14 @@
-#include "headers/main.h"
+#include <stdio.h>
+#include "headers/game.h"
 
 int main()
 {
-    printf("hello world\n");
+    t_game *game;
+
+    game = game_init();
+    if (game != NULL)
+    {
+      game->start();
+    }
     return 0;
 }
