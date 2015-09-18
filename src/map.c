@@ -1,6 +1,6 @@
 #include "headers/map.h"
 
-static t_map *g_map;
+static t_map *g_map; // TODO: replace this global variable
 
 t_map *map_init()
 {
