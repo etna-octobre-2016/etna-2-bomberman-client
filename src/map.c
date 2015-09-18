@@ -1,36 +1,57 @@
+#include "headers/game.h"
 #include "headers/map.h"
-
-static t_map *g_map; // TODO: replace this global variable
 
 t_map *map_init()
 {
-  g_map = malloc(sizeof(t_map));
-  if (g_map == NULL)
+  t_map *map;
+
+  map = malloc(sizeof(t_map));
+  if (map == NULL)
   {
     return NULL;
   }
-  g_map->height = 0;
-  g_map->width = 0;
-  g_map->getHeight = &map_get_height;
-  g_map->getWidth = &map_get_width;
-  g_map->setSize = &map_set_size;
-  return g_map;
+  map->height = 0;
+  map->width = 0;
+  map->getHeight = &map_get_height;
+  map->getWidth = &map_get_width;
+  map->setSize = &map_set_size;
+  return map;
 }
 int map_get_height()
 {
-  return g_map->height;
+  t_game  *game;
+  t_map   *map;
+
+  game = game_get_data();
+  map = game->map;
+  return map->height;
 }
 int map_get_width()
 {
-  return g_map->width;
+  t_game  *game;
+  t_map   *map;
+
+  game = game_get_data();
+  map = game->map;
+  return map->width;
 }
 void map_destroy()
 {
+  t_game  *game;
+  t_map   *map;
+
+  game = game_get_data();
+  map = game->map;
   printf("map destroyed\n");
-  free(g_map);
+  free(map);
 }
 void map_set_size(int height, int width)
 {
-  g_map->height = height;
-  g_map->width = width;
+  t_game  *game;
+  t_map   *map;
+
+  game = game_get_data();
+  map = game->map;
+  map->height = height;
+  map->width = width;
 }

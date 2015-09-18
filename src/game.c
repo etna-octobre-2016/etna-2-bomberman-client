@@ -2,6 +2,10 @@
 
 static t_game *g_game;
 
+t_game *game_get_data()
+{
+  return g_game;
+}
 t_game *game_init()
 {
   g_game = malloc(sizeof(t_game));
