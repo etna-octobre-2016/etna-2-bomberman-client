@@ -5,11 +5,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "map.h"
 
 // TYPES
 typedef struct  s_game
 {
-  char          *name;
+  t_map         *map;
   void          (*quit)();
   void          (*start)();
 }               t_game;
