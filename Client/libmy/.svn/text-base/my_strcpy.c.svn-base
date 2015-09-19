@@ -1,0 +1,26 @@
+/*
+** my_strcpy.c for my_strcpy in /Users/clementcosson/Piscine/C/Journee_04/cosson_c/my_strcpy
+** 
+** Made by COSSON Clement
+** Login   <cosson_c@etna-alternance.net>
+** 
+** Started on  Fri Oct 25 09:12:23 2013 COSSON Clement
+** Last update Fri Oct 25 10:45:56 2013 COSSON Clement
+*/
+
+char	*my_strcpy(char *dest, char *src)
+{
+  char	*ptr_tmp;
+
+  ptr_tmp = dest;
+  while (*src != '\0')
+    {
+      *dest = *src;
+      src++;
+      dest++;
+    }
+  *dest = '\0';
+  dest = ptr_tmp;
+  return (dest);
+}
+

@@ -1,0 +1,25 @@
+/*
+** my_strlen.c for my_strlen in /Users/clementcosson/Piscine/C/Journee_02/cosson_c/my_strlen
+** 
+** Made by COSSON Clement
+** Login   <cosson_c@etna-alternance.net>
+** 
+** Started on  Wed Oct 23 10:32:03 2013 COSSON Clement
+** Last update Thu Oct 31 15:27:08 2013 COSSON Clement
+*/
+int	my_strlen(char *str)
+{
+  int	i;
+
+  i = 0;
+  if (str)
+    {
+      i = 0;
+      while (*str != '\0')
+	{
+	  i++;
+	  str++;
+	}
+    }
+  return (i);
+}

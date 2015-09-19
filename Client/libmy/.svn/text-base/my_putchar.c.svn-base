@@ -1,0 +1,16 @@
+/*
+** my_putchar.c for my_putchar in /Users/clementcosson/Piscine/C/Journee_05/cosson_c/libmy
+** 
+** Made by COSSON Clement
+** Login   <cosson_c@etna-alternance.net>
+** 
+** Started on  Sat Oct 26 10:07:34 2013 COSSON Clement
+** Last update Sat Oct 26 10:09:15 2013 COSSON Clement
+*/
+#include <unistd.h>
+
+void	my_putchar(char c)
+{
+  write(1, &c, 1);
+}
+

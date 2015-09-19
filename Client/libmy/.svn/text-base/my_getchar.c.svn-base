@@ -1,0 +1,21 @@
+/*
+** my_getchar.c for my_getchar in /home/clementcosson/C/Fondation/cosson_c
+** 
+** Made by COSSON Clement
+** Login   <cosson_c@etna-alternance.net>
+** 
+** Started on  Sat Jan 10 20:54:11 2015 COSSON Clement
+** Last update Sat Jan 10 20:57:14 2015 COSSON Clement
+*/
+#include <stdio.h>
+#include <unistd.h>
+
+char    my_getchar()
+{
+  char  c;
+
+  if (read(STDIN_FILENO, &c, 1))
+    return c;
+  else
+    return EOF;
+}
