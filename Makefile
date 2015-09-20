@@ -9,7 +9,7 @@ NAME=bomberman_client
 # Commands
 # -------------------------------------------------
 CC=gcc
-CFLAGS=-W -Wall -Werror -Wextra -std=c11 -I $(SDLDIR)/include -L$(SDLDIR)/build/.libs -lsdl2
+CFLAGS=-W -Wall -Werror -Wextra -std=c11
 RM=rm -rf
 
 # Directories
@@ -46,7 +46,7 @@ libs: sdl2
 # Compilation
 # -------------------------------------------------
 $(NAME): $(BINDIR)
-	$(CC) $(CFLAGS) -o $(BIN) $(SRC)
+	$(CC) $(CFLAGS) -I$(SDLDIR)/include -o $(BIN) $(SDLDIR)/build/.libs/libSDL2.a $(SRC)
 
 # Directories
 # -------------------------------------------------
