@@ -2,7 +2,7 @@
 #define BOMBERMAN_WINDOW_H
 
 // INCLUDES
-#include <SDL.h>
+#include <SDL2.framework/Headers/SDL.h>
 
 // CONSTANTS
 #define WINDOW_WIDTH  640

@@ -16,7 +16,7 @@ RM=rm -rf
 # -------------------------------------------------
 BINDIR=./bin
 OBJDIR=./obj
-SDLDIR=./lib/sdl2
+SDLDIR=~/Library/Frameworks/SDL2.framework
 SRCDIR=./src
 ROOTDIR=`pwd`
 
@@ -34,19 +34,10 @@ SRC=$(SRCDIR)/*.c
 # -------------------------------------------------
 all: $(NAME)
 
-# SDL2 Lib Compilation
-# -------------------------------------------------
-sdl2:
-	cd $(SDLDIR) && ./configure && make && cd $(ROOTDIR) && echo "SDL2 compiling complete !"
-
-# Libraries
-# -------------------------------------------------
-libs: sdl2
-
 # Compilation
 # -------------------------------------------------
 $(NAME): $(BINDIR)
-	$(CC) $(CFLAGS) -I$(SDLDIR)/include -o $(BIN) $(SDLDIR)/build/.libs/libSDL2.a $(SRC)
+	$(CC) $(CFLAGS) $(SDLDIR)/SDL2 -o $(BIN) $(SRC)
 
 # Directories
 # -------------------------------------------------
