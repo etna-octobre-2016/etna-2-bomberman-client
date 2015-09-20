@@ -32,12 +32,16 @@ SRC=$(SRCDIR)/*.c
 
 # Default
 # -------------------------------------------------
-all: sdl2 $(NAME)
+all: $(NAME)
 
 # SDL2 Lib Compilation
 # -------------------------------------------------
 sdl2:
 	cd $(SDLDIR) && ./configure && make && cd $(ROOTDIR) && echo "SDL2 compiling complete !"
+
+# Libraries
+# -------------------------------------------------
+libs: sdl2
 
 # Compilation
 # -------------------------------------------------
