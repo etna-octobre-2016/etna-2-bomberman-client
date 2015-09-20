@@ -8,12 +8,14 @@
 #include <string.h>
 #include "map.h"
 #include "player.h"
+#include "window.h"
 
 // TYPES
 typedef struct  s_game
 {
   t_map         *map;
   t_player      *players;
+  t_window      *window;
   t_player      *(*getPlayerById)(int player_id);
   bool          (*addPlayer)(int player_id);
   void          (*quit)();

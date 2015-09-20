@@ -14,12 +14,13 @@ t_game *game_init()
     return (NULL);
   }
   g_game->map = map_init();
+  g_game->window = window_init();
   g_game->players = NULL;
   g_game->addPlayer = &game_add_player;
   g_game->getPlayerById = &game_get_player_by_id;
   g_game->quit = &game_quit;
   g_game->start = &game_start;
-  if (g_game->map == NULL)
+  if (g_game->map == NULL || g_game->window == NULL)
   {
     return (NULL);
   }
