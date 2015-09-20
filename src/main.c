@@ -7,6 +7,8 @@ int main()
 
   t_player *p1;
   t_player *p2;
+  t_character *c1;
+  t_character *c2;
 
   game = game_init();
   if (game != NULL)
@@ -23,6 +25,18 @@ int main()
     p2 = game->getPlayerById(123);
     printf("p1 addr = %p\n", p1);
     printf("p2 addr = %p\n", p2);
+    c1 = p1->character;
+    c2 = p2->character;
+    printf("c1 addr = %p\n", c1);
+    printf("c2 addr = %p\n", c2);
+    c1->backward(c1);
+    c1->forward(c1);
+    c1->left(c1);
+    c1->right(c1);
+    c2->backward(c2);
+    c2->forward(c2);
+    c2->left(c2);
+    c2->right(c2);
     game->quit();
   }
   return (EXIT_SUCCESS);

@@ -9,6 +9,11 @@ t_player *player_create(int player_id)
   {
     return (NULL);
   }
+  player->character = character_create();
+  if (player->character == NULL)
+  {
+    return (NULL);
+  }
   player->id = player_id;
   player->next = NULL;
   return (player);
