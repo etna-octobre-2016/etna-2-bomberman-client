@@ -13,11 +13,13 @@ t_game *game_init()
   {
     return (NULL);
   }
+  g_game->is_running = false;
   g_game->map = map_init();
   g_game->window = window_init();
   g_game->players = NULL;
   g_game->addPlayer = &game_add_player;
   g_game->getPlayerById = &game_get_player_by_id;
+  g_game->destroy = &game_destroy;
   g_game->quit = &game_quit;
   g_game->start = &game_start;
   if (g_game->map == NULL || g_game->window == NULL)
@@ -65,13 +67,18 @@ bool game_add_player(int player_id)
   tmp->next = player;
   return (true);
 }
-void game_quit()
+void game_destroy()
 {
   // g_game->map->destroy(); // TODO: fix segfault
   free(g_game);
+}
+void game_quit()
+{
+  g_game->is_running = false;
   printf("game quit\n");
 }
 void game_start()
 {
+  g_game->is_running = true;
   printf("game started\n");
 }
