@@ -12,6 +12,7 @@ t_map *map_init()
   }
   map->height = 0;
   map->width = 0;
+  map->destroy = &map_destroy;
   map->getHeight = &map_get_height;
   map->getWidth = &map_get_width;
   map->setSize = &map_set_size;
