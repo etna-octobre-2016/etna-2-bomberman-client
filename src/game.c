@@ -70,6 +70,8 @@ bool game_add_player(int player_id)
 void game_destroy()
 {
   // g_game->map->destroy(); // TODO: fix segfault
+  SDL_DestroyWindow(g_game->window->sdl_window);
+  SDL_Quit();
   free(g_game);
 }
 void game_quit()
