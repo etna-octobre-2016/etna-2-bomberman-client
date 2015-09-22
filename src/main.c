@@ -39,6 +39,7 @@ int main()
       c2->forward(c2);
       c2->left(c2);
       c2->right(c2);
+      game->window->refresh();
       game->quit();
     }
     game->destroy();

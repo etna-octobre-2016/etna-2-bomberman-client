@@ -14,9 +14,11 @@ typedef struct  s_window
 {
   SDL_Window    *sdl_window;
   SDL_Surface   *sdl_surface;
+  void          (*refresh)();
 }               t_window;
 
 // PROTOTYPES
-t_window *window_init();
+t_window  *window_init();
+void      window_refresh();
 
 #endif
