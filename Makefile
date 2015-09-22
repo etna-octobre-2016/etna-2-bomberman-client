@@ -39,6 +39,11 @@ all: $(NAME)
 $(NAME): $(BINDIR)
 	$(CC) $(CFLAGS) $(SDLDIR)/SDL2 -o $(BIN) $(SRC)
 
+# Game start
+# -------------------------------------------------
+start:
+	$(BINDIR)/$(NAME)
+
 # Directories
 # -------------------------------------------------
 $(BINDIR):
