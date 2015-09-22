@@ -1,16 +1,18 @@
 #include <stdio.h>
-#include "headers/game.h"
 #include <SDL2.framework/Headers/SDL.h>
+#include "headers/main.h"
+#include "headers/game.h"
 
-int main()
+int main(int argc, char const **argv)
 {
   t_game *game;
-
   t_player *p1;
   t_player *p2;
   t_character *c1;
   t_character *c2;
 
+  UNUSED(argc);
+  UNUSED(argv);
   game = game_init();
   if (game != NULL)
   {
@@ -40,6 +42,7 @@ int main()
       c2->forward(c2);
       c2->left(c2);
       c2->right(c2);
+      c2->throwBomb(c2);
       game->map->draw();
       game->window->refresh();
       SDL_Delay(2000);

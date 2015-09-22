@@ -12,6 +12,7 @@ typedef struct  s_character
   void          (*forward)(struct s_character *character);
   void          (*left)(struct s_character *character);
   void          (*right)(struct s_character *character);
+  void          (*throwBomb)(struct s_character *character);
 }               t_character;
 
 // PROTOTYPES
@@ -20,5 +21,6 @@ void          character_move_backward(t_character *character);
 void          character_move_forward(t_character *character);
 void          character_move_left(t_character *character);
 void          character_move_right(t_character *character);
+void          character_throw_bomb(t_character *character);
 
 #endif

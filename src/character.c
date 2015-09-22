@@ -14,6 +14,7 @@ t_character   *character_create()
   character->forward = &character_move_forward;
   character->left = &character_move_left;
   character->right = &character_move_right;
+  character->throwBomb = &character_throw_bomb;
   return (character);
 }
 void character_move_backward(t_character *character)
@@ -35,4 +36,9 @@ void character_move_right(t_character *character)
 {
   UNUSED(character);
   printf("a droite\n");
+}
+void character_throw_bomb(t_character *character)
+{
+  UNUSED(character);
+  printf("throwing bomb\n");
 }
