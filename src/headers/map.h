@@ -10,9 +10,11 @@ typedef struct  s_map
 {
   int           height;
   int           width;
+
   int           (*getHeight)();
   int           (*getWidth)();
   void          (*destroy)();
+  void          (*draw)();
   void          (*setSize)(int height, int width);
 }               t_map;
 
@@ -21,6 +23,7 @@ t_map *map_init();
 int   map_get_height();
 int   map_get_width();
 void  map_destroy();
+void  map_draw();
 void  map_set_size(int height, int width);
 
 #endif

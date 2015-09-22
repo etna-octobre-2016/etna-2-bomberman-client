@@ -13,6 +13,7 @@ t_map *map_init()
   map->height = 0;
   map->width = 0;
   map->destroy = &map_destroy;
+  map->draw = &map_draw;
   map->getHeight = &map_get_height;
   map->getWidth = &map_get_width;
   map->setSize = &map_set_size;
@@ -39,6 +40,13 @@ void map_destroy()
   game = game_get_data();
   free(game->map);
   printf("map destroyed\n");
+}
+void map_draw()
+{
+  t_game *game;
+
+  game = game_get_data();
+  SDL_FillRect(game->window->sdl_surface, NULL, SDL_MapRGB(game->window->sdl_surface->format, 0xFF, 0xFF, 0xFF));
 }
 void map_set_size(int height, int width)
 {

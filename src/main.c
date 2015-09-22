@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "headers/game.h"
+#include <SDL2.framework/Headers/SDL.h>
 
 int main()
 {
@@ -39,7 +40,9 @@ int main()
       c2->forward(c2);
       c2->left(c2);
       c2->right(c2);
+      game->map->draw();
       game->window->refresh();
+      SDL_Delay(2000);
       game->quit();
     }
     game->destroy();
