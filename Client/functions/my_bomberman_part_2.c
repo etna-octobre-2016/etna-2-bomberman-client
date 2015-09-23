@@ -5,7 +5,7 @@
 ** Login   <cosson_c@etna-alternance.net>
 **
 ** Started on  Thu Jan  8 21:19:32 2015 COSSON Clement
-** Last update Fri Apr  3 16:40:28 2015 COSSON Clement
+** Last update Wed Sep 23 13:41:27 2015 COSSON Clement
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -34,9 +34,37 @@ void     read_stdin(int socket_director, char big_table[T_MAX_TABLE])
 	  else if (big_table[0] != '\n')
 	    chat_with_server(socket_director, big_table);
 	}
+      printf("reset du big table");
       reset_big_table(big_table);
       i = 0;
     }
+}
+
+void            chat_with_server(int socket_director, char *cmd)
+{
+  char	c;
+
+  if (my_strcmp(cmd, "up\n") == 0)
+    write(socket_director, "up", my_strlen("up"));
+  else if (my_strcmp(cmd, "down\n") == 0)
+    write(socket_director, "down", my_strlen("down"));
+  else if (my_strcmp(cmd, "left\n") == 0)
+    write(socket_director, "left", my_strlen("left"));
+  else if (my_strcmp(cmd, "right\n") == 0)
+    write(socket_director, "right", my_strlen("right"));
+  else if (my_strcmp(cmd, "bomb\n") == 0)
+    write(socket_director, "bomb", my_strlen("bomb"));
+  else if (my_strcmp(cmd, "update\n") == 0)
+    {
+      write(socket_director, "update", my_strlen("update"));
+      give_me_the_map(socket_director);
+      return ;
+    }
+  else
+    return ;
+  while ((c = my_getsocketchar(socket_director)) != '\0')
+      my_putchar(c);
+  my_putstr("\n");
 }
 
 void	reset_big_table(char big_table[T_MAX_TABLE])
@@ -81,14 +109,3 @@ char    my_getsocketchar(int socket_director)
   else
     return EOF;
 }
-
-void            chat_with_server(int socket_director, char *cmd)
-{
-  char	c;
-
-  write(socket_director, cmd, my_strlen(cmd));
-  while ((c = my_getsocketchar(socket_director)) != '\n')
-      my_putchar(c);
-  my_putstr("\n");
-}
-

@@ -4,6 +4,7 @@ LDFLAGS =
 SRC 	= 	main.c 	\
 		functions/my_bomberman_part_1.c \
 		functions/my_bomberman_part_2.c \
+		functions/my_bomberman_part_3.c \
 		libmy/my_putchar.c \
 		libmy/my_strlen.c \
 		libmy/my_putstr.c \

@@ -5,7 +5,7 @@
 ** Login   <cosson_c@etna-alternance.net>
 **
 ** Started on  Thu Jan  8 14:41:31 2015 COSSON Clement
-** Last update Fri Apr  3 16:00:23 2015 COSSON Clement
+** Last update Wed Sep 23 12:14:23 2015 COSSON Clement
 */
 #ifndef __MY_FONDATION__
 #define __MY_FONDATION__
@@ -41,7 +41,7 @@ typedef struct		s_args
 
 /*
 ** ============================================================================
-** ============================== my_fondation_part 1 =========================
+** ============================== my_bomberman_part 1 =========================
 ** ============================================================================
 */
 
@@ -76,7 +76,7 @@ int	check_if_port_is_correct(char *port);
 
 /*
 ** ============================================================================
-** ============================== my_cat_part 2 ===============================
+** ============================== my_bomberman_part 2 =========================
 ** ============================================================================
 */
 
@@ -85,6 +85,11 @@ int	check_if_port_is_correct(char *port);
 **		Write -- Read (des sockets) ou quit le programme
 */
 void	read_stdin(int socket_director, char big_table[T_MAX_TABLE]);
+
+/*
+**		Send cmd amd display message
+*/
+void	chat_with_server(int socket_director, char big_table[T_MAX_TABLE]);
 
 /*
 **		Remet le tableau à 0 (comme c'est une chaine de charactère ça devient)
@@ -103,11 +108,10 @@ int	connect_to_server(t_args *s_as);
 char	my_getsocketchar(int socket_director);
 
 /*
-**		Send cmd amd display message
+** ============================================================================
+** ============================== my_bomberman_part 3 =========================
+** ============================================================================
 */
-void	chat_with_server(int socket_director, char big_table[T_MAX_TABLE]);
-
-
-
+void	give_me_the_map(int socket_director);
 #endif
 
