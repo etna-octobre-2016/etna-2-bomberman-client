@@ -12,7 +12,7 @@
 
 typedef struct            s_server
 {
-    int               listener;
+  int                 listener;
 }                     s_server;
 
 s_server* getSocket();

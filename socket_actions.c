@@ -93,7 +93,6 @@ void convertCharInt(char* map_char)
       }
     }
   }
-  // my_printf("nb_args = %d", nb_args);
   /* FIRST MALLOC IF MAP == NULL */
   if (map == NULL)
   {

@@ -44,7 +44,7 @@ void init_server()
     exit(EXIT_FAILURE);
   }
   client_addr.sin_family = AF_INET;
-  client_addr.sin_addr.s_addr = inet_addr("192.168.33.13");
+  client_addr.sin_addr.s_addr = inet_addr("192.168.1.2");
   client_addr.sin_port = htons(4242);
   if (connect(listener, (const struct sockaddr*)&client_addr, sizeof(client_addr)) == -1)
   {
